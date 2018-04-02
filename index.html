@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Google Map Project</title>
+  <meta name="viewport" content="initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<body>
+  <div id="map"></div>
+  <div id="container" class="container">
+    <h4>Veterinarian Maps</h4>
+    <div id="locationField">
+      <input id="autocomplete" placeholder="Enter your address" type="text"></input>
+    </div>
+    <br/>
+    <form>
+      <input type="button" value="All Vet" onclick="loadVeterinaries();">
+      <input type="button" value="Nearest Vet" onclick="loadNearestVeterinaries();">
+      <input type="button" value="Clear" onclick="clearMarkers();">
+    </form>
+    <br/>
+    <ul class="nav nav-tabs">
+      <li class="active">
+        <a id="tab-distance-matrix" data-toggle="tab" href="#distanceMatrix">Distance Matrix</a>
+      </li>
+      <li>
+        <a id="tab-directions" data-toggle="tab" href="#directions">Directions</a>
+      </li>
+    </ul>
+    <div id="tab-container" class="tab-content">
+      <div id="distanceMatrix" class="tab-pane fade in active">
+        <ul class="list-group">
+        </ul>
+      </div>
+      <div id="directions" class="tab-pane fade">
+        <div></div>
+      </div>
+    </div>
+  </div>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3kOYMhNbartGm75c_O2XioYUTnbiEsu4&callback=initMap&libraries=places"
+    async defer></script>
+  <script src="veterinarias.js"></script>
+  <script src="maps.js"></script>
+  <script src="styleMaps.js"></script>
+</body>
+
+</html>
